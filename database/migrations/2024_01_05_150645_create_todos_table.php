@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('time');
             $table->timestamps();
+            $table->softDeletes();
         });
+        
     }
 
     /**
