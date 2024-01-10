@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('dictionaries', function (Blueprint $table) {
             $table->id();
+            $table->string('url');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('wordlists', function (Blueprint $table) {
             $table->id();
+            $table->string('wordlist_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
