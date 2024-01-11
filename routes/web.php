@@ -31,4 +31,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/' , [DictionaryController::class, 'index']);
+Route::get('/dictionaries' , [DictionaryController::class, 'index']);
