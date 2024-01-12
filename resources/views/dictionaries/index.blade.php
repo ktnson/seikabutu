@@ -9,6 +9,7 @@
     <body>
         <h1>Dictionary List</h1>
         <a href='/dictionaries/create'>辞書新規登録</a>
+       
         <div class='dictionaries'>
             @foreach ($dictionaries as $dictionary)
                 <div class='dictionary'>
