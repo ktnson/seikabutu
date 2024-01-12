@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dictionaries', function (Blueprint $table) {
-            $table->id();
-            $table->string('url');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('dictionaries', function (Blueprint $table) {
+            $table->string('dictionary_name');
+            //
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dictionaries');
+        Schema::table('dictionaries', function (Blueprint $table) {
+            //
+        });
     }
 };
