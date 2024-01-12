@@ -12,10 +12,27 @@
         <div class='dictionaries'>
             @foreach ($dictionaries as $dictionary)
                 <div class='dictionary'>
-                     <h2 class='dictionary_name'>{{ $dictionry->dictionry_name }}</h2>
-                     <p class='url'>{{ $dictionry->url }}</p>
+                    <h2>
+                       <a href="/dictionaries/{{ $dictionary->id }}" class='dictionary_name'>{{ $dictionary->dictionary_name }}</a> 
+                    </h2>
+                     <p class='url'>{{ $dictionary->url }}</p>
+                     
+                     <form action="/dicitonaries/{{ $dictionary->id }}" id="form_{{ $dictionary->id }}" method="dictionary">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deleteDictionary({{ $dictionary->id }})">delete</button> 
+                    </form>
                 </div>
             @endforeach
         </div>
     </body>
+        <script>
+            function deletePost(id) {
+                'use strict'
+
+                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                    document.getElementById(`form_${id}`).submit();
+                    }
+                }
+        </script>
 </html>
