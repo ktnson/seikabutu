@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Dictionary extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+    'dictionary_name',
+    'url',
+];
 }
