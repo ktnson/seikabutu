@@ -33,5 +33,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/dictionaries' , [DictionaryController::class, 'index']);
 Route::get('/dictionaries/create' , [DictionaryController::class, 'create']);
-Route::get('/dictionaries/{$dictionary}' , [DictionaryController::class, 'show']);
+Route::get('/dictionaries/{dictionary}' , [DictionaryController::class, 'show']);
 Route::post('/dictionaries' , [DictionaryController::class, 'store']);
+
+
+
