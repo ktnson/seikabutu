@@ -10,7 +10,8 @@
         
     </head>
     <body>
-        <a href="/dictionaries">辞書にとぶ</a>
+        <a href="/dictionaries">辞書</a>
+        <a href="/wordlists">単語帳</a>
         
     </body>
 </html>

@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wordlists', function (Blueprint $table) {
-            $table->id();
+        Schema::table('wordlists', function (Blueprint $table) {
             $table->string('wordlist_name');
-            $table->string('word');
-            $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wordlists');
+        Schema::table('wordlists', function (Blueprint $table) {
+            //
+        });
     }
 };
