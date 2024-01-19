@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -31,7 +31,11 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/dictionaries' , [DictionaryController::class, 'index']);
-Route::get('/dictionaries/create' , [DictionaryController::class, 'create']);
-Route::get('/dictionaries/{$dictionary}' , [DictionaryController::class, 'show']);
-Route::post('/dictionaries' , [DictionaryController::class, 'store']);
+Route::middleware('auth')->group(function () {
+    Route::get('/dictionaries' , [DictionaryController::class, 'index']);
+    Route::get('/dictionaries/create' , [DictionaryController::class, 'create']);
+    Route::get('/dictionaries/{dictionary}' , [DictionaryController::class, 'show']);
+    Route::post('/dictionaries' , [DictionaryController::class, 'store']);
+});
+
+

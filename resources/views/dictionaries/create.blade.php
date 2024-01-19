@@ -11,14 +11,14 @@
     </head>
     <body>
         <h1>Dictionary List</h1>
-        <form action="/dictionary" method="DICTIONARY">
+        <form action="/dictionaries" method="POST">
             @csrf
             <div class="dictionary_name">
-                <h2>dictionary_name</h2>
+                <h2>辞書名</h2>
                 <input type="dictionary_name" name="dictionary[dictionary_name]" placeholder="辞書名"/>
             </div>
             <div class="url">
-                <h2>辞書</h2>
+                <h2>URL</h2>
                 <textarea name="dictionary[url]" placeholder="URLを張り付ける"></textarea>
             </div>
             <input type="submit" value="store"/>

@@ -15,7 +15,7 @@ class DictionaryController extends Controller
     
      public function show(Dictionary $dictionary)
     {
-        return view('dictionaries.show')->with(['dictionaries' => $dictionary->get()]);
+        return view('dictionaries.show')->with(['dictionary' => $dictionary]);
         //blade内で使う変数'dictionries'と設定。'dictionaries'の中身にgetを使い、インスタンス化した$dictionryを代入。
     }
     
@@ -27,7 +27,29 @@ class DictionaryController extends Controller
     
     public function store(Request $request, Dictionary $dictionary)
     {
-      dd($request->all());
+        $input = $request['dictionary'];
+        $dictionary->fill($input)->save();
+        return redirect('/dictionaries/' . $dictionary->id);
     }
+    
     //
+    
+    public function edit(Dictionary $dictionary)
+    {
+        return view('dictionaries.edit')->with(['dictionary' => $dictionary]);
+    }
+
+    public function update(Request $request, Dictionary $dictionary)
+    {
+        $input_dictionary = $request['dictionary'];
+        $dictionary->fill($input_dictionary)->save();
+
+        return redirect('/dictionaries/' . $dictionary->id);
+    }
+    
+    public function delete(Dictionary $dictionary)
+    {
+        $dictionary->delete();
+        return redirect('/');
+    }
 }

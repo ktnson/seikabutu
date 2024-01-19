@@ -16,10 +16,16 @@
         </h1>
         <div class="content">
             <div class="content__dictionary">
-                <h3>辞書</h3>
+                <h3>URL</h3>
                 <p>{{ $dictionary->url }}</p>    
             </div>
         </div>
+        
+        <div class="edit">
+            <a href="/dictionaries/{{ $dictionary->id }}/edit">edit</a>
+        </div>
+        
+        
         <div class="footer">
            <a href="/">戻る</a>
         </div>
