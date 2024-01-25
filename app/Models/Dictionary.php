@@ -14,5 +14,15 @@ class Dictionary extends Model
     protected $fillable = [
     'dictionary_name',
     'url',
+    'language_id',
 ];
+
+// Languageに対するリレーション
+
+//「1対多」の関係なので単数系に
+public function language()
+{
+    return $this->belongsTo(Language::class);
+}
+
 }

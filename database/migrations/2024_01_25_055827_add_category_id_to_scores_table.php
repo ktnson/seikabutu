@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('wordlists', function (Blueprint $table) {
-            $table->string('word');//
+        Schema::table('scores', function (Blueprint $table) {
+             $table->foreignId('category_id')->constrained(); 
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('wordlists', function (Blueprint $table) {
+        Schema::table('scores', function (Blueprint $table) {
             //
         });
     }
