@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('dictionaries', function (Blueprint $table) {
-            $table->string('dictionary_name');
-            //
+        Schema::table('notes', function (Blueprint $table) {
+             $table->foreignId('file_id')->constrained(); 
         });
     }
 
@@ -26,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('dictionaries', function (Blueprint $table) {
+        Schema::table('notes', function (Blueprint $table) {
             //
         });
     }

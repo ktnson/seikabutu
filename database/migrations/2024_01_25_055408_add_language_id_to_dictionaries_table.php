@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('wordlists', function (Blueprint $table) {
-            $table->string('wordlist_name');
+        Schema::table('dictionaries', function (Blueprint $table) {
+            $table->foreignId('language_id')->constrained();   
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('wordlists', function (Blueprint $table) {
+        Schema::table('dictionaries', function (Blueprint $table) {
             //
         });
     }
