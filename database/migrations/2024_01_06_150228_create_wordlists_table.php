@@ -3,9 +3,10 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 return new class extends Migration
-{
+{   use SoftDeletes;
     /**
      * Run the migrations.
      *
@@ -19,6 +20,7 @@ return new class extends Migration
             $table->foreignId('word_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
+            
         });
     }
 

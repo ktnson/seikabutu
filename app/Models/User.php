@@ -41,4 +41,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    // eventに対するリレーション
+
+//「1対多」の関係なので'events'と複数形に
+public function events()   
+{
+    return $this->hasMany(Event::class);  
+}
+
+// fileに対するリレーション
+
+//「1対多」の関係なので'files'と複数形に
+public function files()   
+{
+    return $this->hasMany(File::class);  
+}
+
 }

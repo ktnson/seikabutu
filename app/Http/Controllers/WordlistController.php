@@ -10,13 +10,13 @@ class WordlistController extends Controller
     public function index(Wordlist $wordlist)
     {
         return view('wordlists.index')->with(['wordlists' => $wordlist->get()]);
-        //blade内で使う変数'wordlists'と設定。'wordlists'の中身にgetを使い、インスタンス化した$dictionryを代入。
+        //blade内で使う変数'dictionries'と設定。'wordlists'の中身にgetを使い、インスタンス化した$dictionryを代入。
     }
     
      public function show(Wordlist $wordlist)
     {
         return view('wordlists.show')->with(['wordlist' => $wordlist]);
-        //blade内で使う変数'wordlists'と設定。'wordlists'の中身にgetを使い、インスタンス化した$dictionryを代入。
+        //blade内で使う変数'dictionries'と設定。'wordlists'の中身にgetを使い、インスタンス化した$dictionryを代入。
     }
     
     public function create()
@@ -52,4 +52,5 @@ class WordlistController extends Controller
         $wordlist->delete();
         return redirect('/');
     }
+    
 }

@@ -10,4 +10,16 @@ class Language extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    
+    protected $fillable = [
+    'name',
+];
+
+// dicitonaryに対するリレーション
+
+//「1対多」の関係なので'dictionaries'と複数形に
+public function dictionaries()   
+{
+    return $this->hasMany(Dictionary::class);  
+}
 }

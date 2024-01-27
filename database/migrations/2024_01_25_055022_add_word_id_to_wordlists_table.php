@@ -3,10 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 return new class extends Migration
-{   use SoftDeletes;
+{
     /**
      * Run the migrations.
      *
@@ -14,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('wordlists', function (Blueprint $table) {
+             $table->foreignId('word_id')->constrained();   
+        //'word_id' は 'wordsテーブル' の 'id' を参照する外部キーです
         });
     }
 
@@ -29,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languages');
+        Schema::table('wordlists', function (Blueprint $table) {
+            //
+        });
     }
 };

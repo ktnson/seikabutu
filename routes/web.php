@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DictionaryController;
+use App\Http\Controllers\WordlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dictionaries/create' , [DictionaryController::class, 'create']);
     Route::get('/dictionaries/{dictionary}' , [DictionaryController::class, 'show']);
     Route::post('/dictionaries' , [DictionaryController::class, 'store']);
+    Route::get('/dictionaries/{dictionary}/edit' , [DictionaryController::class, 'edit']);
+    Route::put('/dictionaries/{dictionary}' , [DictionaryController::class, 'update']);
+    Route::delete('/dictionaries/{dictionary}', [DictionaryController::class,'delete']);
+
 });
 
 

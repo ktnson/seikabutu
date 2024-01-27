@@ -10,4 +10,16 @@ class Word extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    
+    protected $fillable = [
+    'name',
+];
+
+// wordlistに対するリレーション
+
+//「1対多」の関係なので'wordlists'と複数形に
+public function wordlists()   
+{
+    return $this->hasMany(Wordlist::class);  
+}
 }
