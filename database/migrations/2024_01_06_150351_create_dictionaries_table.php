@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('dictionary_name');
             $table->string('url');
+            $table->foreignId('language_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->SoftDeletes();
         });

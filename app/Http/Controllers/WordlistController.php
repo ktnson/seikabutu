@@ -32,6 +32,8 @@ class WordlistController extends Controller
         return redirect('/wordlists/' . $wordlist->id);
     }
     
+    //
+    
     public function edit(Wordlist $wordlist)
     {
         return view('wordlists.edit')->with(['wordlist' => $wordlist]);

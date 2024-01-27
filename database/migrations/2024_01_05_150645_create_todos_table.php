@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('time');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

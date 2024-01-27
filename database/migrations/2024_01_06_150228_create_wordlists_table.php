@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('wordlists', function (Blueprint $table) {
             $table->id();
             $table->string('wordlist_name');
-            $table->string('word');
+            $table->foreignId('word_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
             
