@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('dictionaries', function (Blueprint $table) {
-            $table->string('dictionary_name');
-            //
+        Schema::create('wordlists', function (Blueprint $table) {
+            $table->id();
+            $table->string('wordlist_name');
+            $table->foreignId('word_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('dictionaries', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('wordlists');
     }
 };

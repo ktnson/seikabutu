@@ -39,3 +39,17 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('/wordlists' , [WordlistController::class, 'index']);
+    Route::get('/wordlists/create' , [WordlistController::class, 'create']);
+    Route::get('/wordlists/{wordlist}' , [WordlistController::class, 'show']);
+    Route::post('/wordlists' , [WordlistController::class, 'store']);
+});
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/events' , [EventController::class, 'index']);
+    Route::get('/events/create' , [EventController::class, 'create']);
+    Route::get('/events/{event}' , [EventController::class, 'show']);
+    Route::post('/events' , [EventController::class, 'store']);
+});

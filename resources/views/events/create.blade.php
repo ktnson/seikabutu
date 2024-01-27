@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>単語帳</title>
+        <title>Event</title>
         
          <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -10,16 +10,12 @@
         
     </head>
     <body>
-        <h1>単語帳</h1>
-        <form action="/wordlists" method="POST">
+        <h1>Event List</h1>
+        <form action="/events" method="POST">
             @csrf
-            <div class="wordlist_name">
-                <h2>単語</h2>
-                <input type="wordlist" name="wordlist[word_name]" placeholder="単語"/>
-            </div>
-            <div class="meaning">
-                <h2>意味・用法</h2>
-                <textarea name="wordlist[meaning]" placeholder="単語の意味・用法"></textarea>
+            <div class="event_name">
+                <h2>イベント名</h2>
+                <input type="event_name" name="event[event_name]" placeholder="イベント名"/>
             </div>
             <input type="submit" value="store"/>
         </form>

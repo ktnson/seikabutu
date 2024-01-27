@@ -10,7 +10,7 @@
         
     </head>
     <body>
-        <h1>Dictionary List</h1>
+        <h1>辞書一覧</h1>
         <form action="/dictionaries" method="POST">
             @csrf
             <div class="dictionary_name">
