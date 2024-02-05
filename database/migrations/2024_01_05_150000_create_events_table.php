@@ -17,9 +17,9 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('taskcount');
-            $table->string('percentage');
-            $table->string('day');
+            $table->string('taskcount')->nullable();
+            $table->string('percentage')->nullable();
+            $table->string('day')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

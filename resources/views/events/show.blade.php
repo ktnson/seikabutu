@@ -11,12 +11,11 @@
         
     </head>
     <body>
-        <h1 class="event_name">
+        <h1 class="name">
             {{ $event->name }}
         </h1>
-        
-        <div class="footer">
-           <a href="/">戻る</a>
-        </div>
+            <div class="footer">
+                <a href="/events">戻る</a>
+            </div>
     </body>
 </html>

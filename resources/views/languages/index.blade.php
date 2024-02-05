@@ -16,11 +16,9 @@
                     <h2>
                        <a href="/dictionaries/{{ $dictionary->id }}" class='dictionary_name'>{{ $dictionary->dictionary_name }}</a> 
                     </h2>
-                    
                      <p class='url'>{{ $dictionary->url }}</p>
-                     <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
                      
-                     <form action="/dictionaries/{{ $dictionary->id }}" id="form_{{ $dictionary->id }}" method="POST">
+                     <form action="/dicitonaries/{{ $dictionary->id }}" id="form_{{ $dictionary->id }}" method="dictionary">
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deleteDictionary({{ $dictionary->id }})">delete</button> 
@@ -29,17 +27,17 @@
             @endforeach
         </div>
          <div class="footer">
-            <a href="/dashboard">戻る</a>
+            <a href="/dictionaries">戻る</a>
         </div>
+            <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
+    </body>
         <script>
-            function deleteDictionary(id) {
+            function deletePost(id) {
                 'use strict'
 
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
                     document.getElementById(`form_${id}`).submit();
                     }
                 }
-        </script>        
-    </body>
-    
+        </script>
 </html>

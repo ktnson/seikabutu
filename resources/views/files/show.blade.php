@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dictionary List</title>
+        <title>ファイル　リスト</title>
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -11,23 +11,13 @@
         
     </head>
     <body>
-        <h1 class="dictionary_name">
-            {{ $dictionary->dictionary_name }}
+        <h1 class="name">
+            {{ $file->name }}
         </h1>
-        <div class="content">
-            <div class="content__dictionary">
-                <h3>URL</h3>
-                <p>{{ $dictionary->url }}</p>    
-            </div>
-        </div>
-        
-        <div class="edit">
-            <a href="/dictionaries/{{ $dictionary->id }}/edit">edit</a>
-        </div>
-        
-        
+        <a href="/lessons/{{ $file->lesson->id }}">{{ $file->lesson->name }}</a>
+        <a href="/notes">ノート新規登録</a>
         <div class="footer">
-           <a href="/">戻る</a>
+           <a href="/files">戻る</a>
         </div>
     </body>
 </html>

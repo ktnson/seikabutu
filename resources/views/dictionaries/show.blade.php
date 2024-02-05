@@ -23,11 +23,13 @@
         
         <div class="edit">
             <a href="/dictionaries/{{ $dictionary->id }}/edit">edit</a>
+            
+            
         </div>
-        
-        
+            <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
+            
         <div class="footer">
-           <a href="/">戻る</a>
+           <a href="/dictionaries">戻る</a>
         </div>
     </body>
 </html>

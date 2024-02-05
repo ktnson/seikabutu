@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 
 class EventController extends Controller
@@ -28,6 +29,7 @@ class EventController extends Controller
     public function store(Request $request, Event $event)
     {
         $input = $request['event'];
+        $input['user_id'] = Auth::id();
         $event->fill($input)->save();
         return redirect('/events/' . $event->id);
     }
@@ -37,6 +39,6 @@ class EventController extends Controller
     public function delete(Event $event)
     {
         $event->delete();
-        return redirect('/');
+        return redirect('/events');
     }
 }

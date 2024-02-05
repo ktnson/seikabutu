@@ -15,11 +15,20 @@
             @csrf
             <div class="wordlist_name">
                 <h2>単語</h2>
-                <input type="wordlist" name="wordlist[word_name]" placeholder="単語"/>
-            </div>
-            <div class="meaning">
+                <input type="text" name="wordlist[wordlist_name]" placeholder="単語"/>
+            <div class="name">
                 <h2>意味・用法</h2>
-                <textarea name="wordlist[meaning]" placeholder="単語の意味・用法"></textarea>
+                <textarea name="wordlist[name]" placeholder="意味や用法を記載する"></textarea>
+            </div>
+            <div class="word">
+                <h2>品詞</h2>
+                    <select name="wordlist[word_id]">
+                        @foreach($words as $word)
+                            <option value="{{ $word->id }}">{{ $word->name }}</option>
+                        @endforeach
+                    </select>
+            </div>
+            </div>
             </div>
             <input type="submit" value="store"/>
         </form>

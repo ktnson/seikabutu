@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dictionary;
+use App\Models\Language;
+
 
 class DictionaryController extends Controller
 {
@@ -19,9 +21,9 @@ class DictionaryController extends Controller
         //blade内で使う変数'dictionaries'と設定。'dictionaries'の中身にgetを使い、インスタンス化した$dictionaryを代入。
     }
     
-    public function create()
+    public function create(Language $language)
     {
-        return view('dictionaries.create');
+        return view('dictionaries.create')->with(['languages' => $language->get()]);
 
     }
     
@@ -50,6 +52,6 @@ class DictionaryController extends Controller
     public function delete(Dictionary $dictionary)
     {
         $dictionary->delete();
-        return redirect('/');
+        return redirect('/dictionaries');
     }
 }

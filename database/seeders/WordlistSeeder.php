@@ -18,6 +18,7 @@ class WordlistSeeder extends Seeder
     {
         DB::table('wordlists')->insert([
                 'wordlist_name' => '命名の心得',
+                'name'=>'データに合わせる' ,
                 'word_id' => 1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
