@@ -13,11 +13,17 @@ class Wordlist extends Model
     
     protected $fillable = [
     'wordlist_name',
-    'word',
+    'name',
     'word_id',
 ];
 
 // Wordに対するリレーション
+
+
+public function getByCategory(int $limit_count = 5)
+    {
+         return $this->wordlists()->with('word')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 
 //「1対多」の関係なので単数系に
 public function word()
@@ -26,5 +32,3 @@ public function word()
 }
 
 }
-
-

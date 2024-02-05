@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Wordlist;
+use App\Models\Word;
 
 class WordlistController extends Controller
 {
@@ -19,9 +20,9 @@ class WordlistController extends Controller
         //blade内で使う変数'dictionries'と設定。'wordlists'の中身にgetを使い、インスタンス化した$dictionryを代入。
     }
     
-    public function create()
+    public function create(Word $word)
     {
-        return view('wordlists.create');
+        return view('wordlists.create')->with(['words' => $word->get()]);
 
     }
     
@@ -50,7 +51,7 @@ class WordlistController extends Controller
     public function delete(Wordlist $wordlist)
     {
         $wordlist->delete();
-        return redirect('/');
+        return redirect('/wordlists');
     }
     
 }

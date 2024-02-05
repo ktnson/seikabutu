@@ -18,8 +18,9 @@ class Word extends Model
 // wordlistに対するリレーション
 
 //「1対多」の関係なので'wordlists'と複数形に
-public function wordlists()   
-{
-    return $this->hasMany(Wordlist::class);  
-}
-}
+    public function wordlists()   
+    {
+        return $this->hasMany(Wordlist::class);  
+    }
+    
+    }

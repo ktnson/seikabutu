@@ -16,19 +16,23 @@
                     <h2>
                        <a href="/wordlists/{{ $wordlist->id }}" class='wordlist_name'>{{ $wordlist->wordlist_name }}</a> 
                     </h2>
-                     <p class='meaning'>{{ $wordlist->url }}</p>
-                     
-                     <form action="/dicitonaries/{{ $wordlist->id }}" id="form_{{ $wordlist->id }}" method="wordlist">
+                     <p class='name'>{{ $wordlist->name }}</p>
+                        <a href="/words/{{ $wordlist->word->id }}">{{ $wordlist->word->name }}</a>
+                     <form action="/wordlists/{{ $wordlist->id }}" id="form_{{ $wordlist->id }}" method="POST">
+                         
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deletewordlist({{ $wordlist->id }})">delete</button> 
+                        <button type="button" onclick="deleteWordlist({{ $wordlist->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach
         </div>
+        <div class="footer">
+            <a href="/dashboard">戻る</a>
+        </div>
     </body>
         <script>
-            function deletePost(id) {
+            function deleteWordlist(id) {
                 'use strict'
 
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {

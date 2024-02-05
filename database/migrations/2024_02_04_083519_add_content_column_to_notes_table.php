@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('scores', function (Blueprint $table) {
-             $table->foreignId('category_id')->constrained(); 
+        Schema::table('notes', function (Blueprint $table) {
+            $table->string('content')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('scores', function (Blueprint $table) {
+        Schema::table('notes', function (Blueprint $table) {
             //
         });
     }

@@ -13,14 +13,14 @@
         <h1>Event List</h1>
         <form action="/events" method="POST">
             @csrf
-            <div class="event_name">
+            <div class="name">
                 <h2>イベント名</h2>
-                <input type="event_name" name="event[event_name]" placeholder="イベント名"/>
+                <input type="name" name="event[name]" placeholder="イベント名"/>
             </div>
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
-            <a href="/">戻る</a>
+            <a href="/events">戻る</a>
         </div>
     </body>
 </html>

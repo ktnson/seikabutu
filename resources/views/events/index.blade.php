@@ -14,15 +14,18 @@
             @foreach ($events as $event)
                 <div class='event'>
                     <h2>
-                       <a href="/events/{{ $event->id }}" class='event_name'>{{ $event->name }}</a> 
+                       <a href="/events/{{ $event->id }}" class='name'>{{ $event->name }}</a> 
                     </h2>
-                     <form action="/dicitonaries/{{ $event->id }}" id="form_{{ $event->id }}" method="event">
+                     <form action="/events/{{ $event->id }}" id="form_{{ $event->id }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deleteEvent({{ $event->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach
+        </div>
+        <div class="footer">
+            <a href="/dashboard">戻る</a>
         </div>
     </body>
         <script>

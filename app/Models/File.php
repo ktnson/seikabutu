@@ -20,8 +20,14 @@ class File extends Model
 // lessonに対するリレーション
 
 //「1対多」の関係なので単数系に
+
+function getPaginateByLimit(int $limit_count = 5)
+{
+    return $this->files()->with('lesson')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+}
 public function lesson()
 {
     return $this->belongsTo(Lesson::class);
 }
+
 }

@@ -12,13 +12,11 @@
        
         <div class='files'>
             @foreach ($files as $file)
-                
                 <div class='file'>
                     <h2>
                        <a href="/files/{{ $file->id }}" class='name'>{{ $file->name }}</a> 
                     </h2>
-                    <a href="/lessons/{{ $file->lesson->id }}">{{ $file->lesson->name }}</a>
-                     <form action="/files/{{ $file->id }}" id="form_{{ $file->id }}" method="POST">
+                     <form action="/files/{{ $file->id }}" id="form_{{ $file->id }}" method="file">
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deleteFile({{ $file->id }})">delete</button> 
@@ -26,14 +24,14 @@
                 </div>
             @endforeach
         </div>
-        
+        <a href="/lessons/{{ $file->lesson->id }}">{{ $file->lesson->name }}</a>
         </div>
         <div class="footer">
             <a href="/dashboard">戻る</a>
         </div>
     </body>
         <script>
-            function deleteFile(id) {
+            function deletePost(id) {
                 'use strict'
 
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {

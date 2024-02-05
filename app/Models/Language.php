@@ -18,8 +18,13 @@ class Language extends Model
 // dicitonaryに対するリレーション
 
 //「1対多」の関係なので'dictionaries'と複数形に
-public function dictionaries()   
-{
-    return $this->hasMany(Dictionary::class);  
-}
+    public function dictionaries()   
+    {
+        return $this->hasMany(Dictionary::class);  
+    }
+    
+    public function getByCategory(int $limit_count = 5)
+    {
+         return $this->dictionaries()->with('language')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }

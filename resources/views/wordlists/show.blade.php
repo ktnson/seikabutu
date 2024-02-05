@@ -16,18 +16,18 @@
         </h1>
         <div class="content">
             <div class="content__wordlist">
-                <h3>単語の意味・用法</h3>
-                <p>{{ $wordlist->url }}</p>    
+                <h3>意味・用法
+                </h3>
+                <p>{{ $wordlist->name }}</p>    
             </div>
         </div>
-        
         <div class="edit">
             <a href="/wordlists/{{ $wordlist->id }}/edit">edit</a>
         </div>
         
-        
+        <a href="/words/{{ $wordlist->word->id }}">{{ $wordlist->word->name }}</a>
         <div class="footer">
-           <a href="/">戻る</a>
+           <a href="/wordlists">戻る</a>
         </div>
     </body>
 </html>

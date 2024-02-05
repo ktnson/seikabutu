@@ -22,4 +22,9 @@ public function files()
 {
     return $this->hasMany(File::class);  
 }
+
+public function getByCategory(int $limit_count = 5)
+    {
+         return $this->files()->with('lesson')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }
