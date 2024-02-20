@@ -6,8 +6,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
-        <h1>Event List</h1>
+    <x-app-layout>
+    <x-slot name="header">
+        {{ __('イベント一覧')}}
+        </x-slot>
         <a href='/events/create'>イベント新規登録</a>
        
         <div class='events'>
@@ -25,11 +27,10 @@
             @endforeach
         </div>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
-    </body>
+    </x-app-layout>
         <script>
-            function deletePost(id) {
+            function deleteEvent(id) {
                 'use strict'
 
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {

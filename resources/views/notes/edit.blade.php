@@ -23,6 +23,7 @@
                 <h2>ノート内容</h2>
                 <input type='text' name='note[content]' value="{{ $note->content }}">
             </div>
+            <input type="hidden" name='note[file_id]' value='{{ $note->file_id}}'>
             <input type="submit" value="store">
         </form>
     </div>

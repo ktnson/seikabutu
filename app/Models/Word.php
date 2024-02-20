@@ -22,5 +22,9 @@ class Word extends Model
     {
         return $this->hasMany(Wordlist::class);  
     }
+     public function getByCategory(int $limit_count = 5)
+    {
+         return $this->wordlists()->with('word')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
     
     }

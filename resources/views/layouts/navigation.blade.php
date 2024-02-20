@@ -13,7 +13,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('ホーム画面') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('dictionaries.index')" :active="request()->routeIs('dictionaries.index')">
+                        {{ __('辞書一覧') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('wordlists.index')" :active="request()->routeIs('wordlists.index')">
+                        {{ __('単語帳一覧') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
+                        {{ __('ファイル一覧') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('events.index')" :active="request()->routeIs('events.index')">
+                        {{ __('イベント一覧') }}
                     </x-nav-link>
                 </div>
             </div>

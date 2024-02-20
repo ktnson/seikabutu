@@ -30,4 +30,9 @@ public function lesson()
     return $this->belongsTo(Lesson::class);
 }
 
+public function notes()
+{
+    return $this->hasMany(Note::class, 'file_id');
+}
+
 }

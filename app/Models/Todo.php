@@ -14,13 +14,15 @@ class Todo extends Model
     protected $fillable = [
     'name',
     'time',
+    'event_id'
 ];
 
 // eventに対するリレーション
 
-//「1対多」の関係なので'events'と複数形に
-public function events()   
+
+public function event()
 {
-    return $this->hasMany(Event::class);  
+    return $this->belongsTo(Event::class, 'event_id');
 }
 }
+

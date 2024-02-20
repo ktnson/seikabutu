@@ -9,7 +9,7 @@ class LanguageController extends Controller
 {
     public function index(Language $language)
     {
-        return view('languages.index')->with(['dictionaries' => $languages->getByCategory()]);
+        return view('languages.index')->with(['dictionaries' => $language->getByCategory()]);
     }
     
     

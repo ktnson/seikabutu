@@ -10,6 +10,9 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +42,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dictionaries' , [DictionaryController::class, 'index']);
+    Route::get('/dictionaries' , [DictionaryController::class, 'index'])->name('dictionaries.index');
     Route::get('/dictionaries/create' , [DictionaryController::class, 'create']);
     Route::get('/dictionaries/{dictionary}' , [DictionaryController::class, 'show']);
     Route::post('/dictionaries' , [DictionaryController::class, 'store']);
@@ -53,7 +56,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/wordlists' , [WordlistController::class, 'index']);
+    Route::get('/wordlists' , [WordlistController::class, 'index'])->name('wordlists.index');
     Route::get('/wordlists/create' , [WordlistController::class, 'create']);
     Route::get('/wordlists/{wordlist}' , [WordlistController::class, 'show']);
     Route::post('/wordlists' , [WordlistController::class, 'store']);
@@ -66,14 +69,37 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/events' , [EventController::class, 'index']);
+    Route::get('/events' , [EventController::class, 'index'])->name('events.index');
     Route::get('/events/create' , [EventController::class, 'create']);
     Route::get('/events/{event}' , [EventController::class, 'show']);
     Route::post('/events' , [EventController::class, 'store']);
+    Route::delete('/events/{event}', [EventController::class,'delete']);
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/files' , [FileController::class, 'index']);
+    Route::get('/events/{event}/todos/create' , [TodoController::class, 'create']);
+    Route::get('/events/todos/{todo}' , [TodoController::class, 'show']);
+    Route::post('/todos/store' , [TodoController::class, 'store']);
+    Route::get('{event}/todos/{todo}/edit' , [TodoController::class, 'edit']);
+    Route::put('/todos/{todo}' , [TodoController::class, 'update']);
+    Route::delete('events/todos/{todo}', [TodoController::class,'delete']);
+    
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/events/{event}/scores/create' , [ScoreController::class, 'create']);
+    Route::get('/events/scores/{score}' , [ScoreController::class, 'show']);
+    Route::post('/scores/store' , [ScoreController::class, 'store']);
+    Route::get('{event}/scores/{score}/edit' , [ScoreController::class, 'edit']);
+    Route::put('/scores/{score}' , [ScoreController::class, 'update']);
+    Route::delete('events/scores/{score}', [ScoreController::class,'delete']);
+    
+    Route::get('/categories/{category}', [CategoryController::class,'index']);
+    
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/files' , [FileController::class, 'index'])->name('files.index');
     Route::get('/files/create' , [FileController::class, 'create']);
     Route::get('/files/{file}' , [FileController::class, 'show']);
     Route::post('/files' , [FileController::class, 'store']);
@@ -84,14 +110,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/notes' , [NoteController::class, 'index']);
-    Route::get('/notes/create' , [NoteController::class, 'create']);
-    Route::get('/notes/{note}' , [NoteController::class, 'show']);
-    Route::post('/notes' , [NoteController::class, 'store']);
-    Route::get('/notes/{note}/edit' , [NoteController::class, 'edit']);
+    Route::get('/files/{file}/notes/create' , [NoteController::class, 'create']);
+    Route::get('/files/notes/{note}' , [NoteController::class, 'show']);
+    Route::post('/notes/store' , [NoteController::class, 'store']);
+    Route::get('/{file}/notes/{note}/edit' , [NoteController::class, 'edit']);
     Route::put('/notes/{note}' , [NoteController::class, 'update']);
-    Route::delete('/notes/{note}', [NoteController::class,'delete']);
+    Route::delete('files/notes/{note}', [NoteController::class,'delete']);
     
-    Route::get('/files/{file}', [FileController::class,'index']);
+    
     
 });

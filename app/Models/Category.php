@@ -12,7 +12,7 @@ class Category extends Model
     use SoftDeletes;
     
     protected $fillable = [
-    'category_name',
+    'name',
 ];
 
 // scoreに対するリレーション
@@ -22,4 +22,10 @@ public function scores()
 {
     return $this->hasMany(Score::class);  
 }
+
+public function getByCategory(int $limit_count = 5)
+    {
+         return $this->scores()->with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
 }

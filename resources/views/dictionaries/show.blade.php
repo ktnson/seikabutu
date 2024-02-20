@@ -11,6 +11,7 @@
         
     </head>
     <body>
+        <a href="/dictionaries">辞書一覧に戻る</a>
         <h1 class="dictionary_name">
             {{ $dictionary->dictionary_name }}
         </h1>
@@ -29,7 +30,6 @@
             <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
             
         <div class="footer">
-           <a href="/dictionaries">戻る</a>
         </div>
     </body>
 </html>

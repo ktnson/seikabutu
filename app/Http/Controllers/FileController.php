@@ -10,13 +10,13 @@ use App\Models\Lesson;
 
 class FileController extends Controller
 {
-    public function index(file $file)
+    public function index(File $file)
     {
         return view('files.index')->with(['files' => $file->get()]);
         //blade内で使う変数'files'と設定。'files'の中身にgetを使い、インスタンス化した$fileを代入。
     }
     
-     public function show(file $file)
+     public function show(File $file)
     {
         return view('files.show')->with(['file' => $file]);
         //blade内で使う変数'files'と設定。'files'の中身にgetを使い、インスタンス化した$fileを代入。
@@ -28,7 +28,7 @@ class FileController extends Controller
 
     }
     
-    public function store(Request $request, file $file)
+    public function store(Request $request, File $file)
     {
         $input = $request['file'];
         $input['user_id'] = Auth::id();
@@ -38,7 +38,7 @@ class FileController extends Controller
     
     //
     
-    public function delete(file $file)
+    public function delete(File $file)
     {
         $file->delete();
         return redirect('/files');
