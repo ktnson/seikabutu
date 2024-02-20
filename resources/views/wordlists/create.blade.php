@@ -11,6 +11,7 @@
     </head>
     <body>
         <h1>単語帳</h1>
+        <a href="/wordlists">単語帳一覧に戻る</a>
         <form action="/wordlists" method="POST">
             @csrf
             <div class="wordlist_name">
@@ -33,7 +34,6 @@
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
     </body>
 </html>

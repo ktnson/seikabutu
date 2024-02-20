@@ -10,7 +10,7 @@
         
     </head>
     <body>
-        <h1>Event List</h1>
+        <h1>イベントリスト</h1>
         <form action="/events" method="POST">
             @csrf
             <div class="name">

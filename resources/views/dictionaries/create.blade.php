@@ -11,6 +11,7 @@
     </head>
     <body>
         <h1>辞書一覧</h1>
+        <a href="/dictionaries">辞書一覧に戻る</a>
         <form action="/dictionaries" method="POST">
             @csrf
             <div class="dictionary_name">
@@ -28,11 +29,10 @@
                             <option value="{{ $language->id }}">{{ $language->name }}</option>
                         @endforeach
                     </select>
-</div>
+            </div>
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
     </body>
 </html>

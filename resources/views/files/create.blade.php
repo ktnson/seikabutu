@@ -12,6 +12,7 @@
     <body>
         <h1>ファイル　リスト</h1>
         <form action="/files" method="POST">
+            <a href="/files">ファイル一覧に戻る</a>
             @csrf
             <div class="name">
                 <h2>ファイル名</h2>
@@ -27,7 +28,6 @@
             <input type="submit" value="store"/>
         </form>
             <div class="footer">
-            <a href="/files">戻る</a>
         </div>
     </body>
 </html>

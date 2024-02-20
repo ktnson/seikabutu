@@ -18,6 +18,7 @@ class ScoreSeeder extends Seeder
     {
         DB::table('scores')->insert([
                 'name' => '命名の心得',
+                'data' => 'データに合わせる',
                 'event_id'=>1,
                 'category_id' =>1,
                 'created_at' => new DateTime(),

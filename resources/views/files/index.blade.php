@@ -6,8 +6,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
-        <h1>ファイル　リスト</h1>
+    <x-app-layout>
+    <x-slot name="header">
+        {{ __('ファイルリスト')}}
+        </x-slot>
         <a href='/files/create'>ファイル新規登録</a>
        
         <div class='files'>
@@ -29,9 +31,8 @@
         
         </div>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
-    </body>
+        </x-app-layout>
         <script>
             function deleteFile(id) {
                 'use strict'

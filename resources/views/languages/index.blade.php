@@ -18,6 +18,7 @@
                     </h2>
                      <p class='url'>{{ $dictionary->url }}</p>
                      
+                    <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
                      <form action="/dicitonaries/{{ $dictionary->id }}" id="form_{{ $dictionary->id }}" method="dictionary">
                         @csrf
                         @method('DELETE')
@@ -29,7 +30,6 @@
          <div class="footer">
             <a href="/dictionaries">戻る</a>
         </div>
-            <a href="/languages/{{ $dictionary->language->id }}">{{ $dictionary->language->name }}</a>
     </body>
         <script>
             function deletePost(id) {

@@ -9,6 +9,8 @@
         
         
     </head>
+    <h1>Language Note</h1>
+    <h2>トップページ</h2>
     <body>
         <a href="/dictionaries">辞書</a>
         <a href="/wordlists">単語帳</a>

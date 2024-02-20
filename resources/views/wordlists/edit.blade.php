@@ -18,6 +18,11 @@
             <div class='content__title'>
                 <h2>単語名</h2>
                 <input type='text' name='wordlist[wordlist_name]' value="{{ $wordlist->wordlist_name }}">
+            </div>
+            <div class='content__body'>
+                <h2>意味・用法</h2>
+                <input type='text' name='wordlist[name]' value="{{ $wordlist->name }}">
+            </div>
             <input type="submit" value="store">
         </form>
     </div>

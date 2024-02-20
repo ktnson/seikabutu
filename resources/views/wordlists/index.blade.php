@@ -6,8 +6,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
-        <h1>単語帳</h1>
+    <x-app-layout>
+    <x-slot name="header">
+        {{ __('単語帳一覧')}}
+        </x-slot>
         <a href='/wordlists/create'>単語新規登録</a>
        
         <div class='wordlists'>
@@ -28,9 +30,8 @@
             @endforeach
         </div>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
-    </body>
+        </x-app-layout>
         <script>
             function deleteWordlist(id) {
                 'use strict'

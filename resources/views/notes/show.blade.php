@@ -14,7 +14,6 @@
         <h1 class="name">
             {{ $note->name }}
         </h1>
-        <a href="/files/{{ $note->file->id }}">{{ $note->file->name }}</a>
          <div class="content">
             <div class="content__notes">
                 <h3>ノート内容</h3>
@@ -23,10 +22,10 @@
         </div>
         
         <div class="edit">
-            <a href="/notes/{{ $note->id }}/edit">edit</a>
+            <a href="/{{ $note->file_id }}/notes/{{ $note->id }}/edit">edit</a>
             
         <div class="footer">
-           <a href="/notes">戻る</a>
+           <a href="/files/{{ $note->file_id }}/">戻る</a>
         </div>
     </body>
 </html>

@@ -13,9 +13,17 @@ class Score extends Model
     
     protected $fillable = [
     'name',
+    'event_id',
     'category_id',
+    'data',
 ];
 // categoryに対するリレーション
+
+//「1対多」の関係なので単数系に
+public function getByCategory(int $limit_count = 5)
+    {
+         return $this->scores()->with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 
 //「1対多」の関係なので単数系に
 public function category()
@@ -23,11 +31,12 @@ public function category()
     return $this->belongsTo(Category::class);
 }
 
+
 // eventに対するリレーション
 
 //「1対多」の関係なので'events'と複数形に
-public function events()   
+public function event()
 {
-    return $this->hasMany(Event::class);  
+    return $this->belongsTo(Event::class, 'event_id');
 }
 }

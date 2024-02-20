@@ -8,12 +8,6 @@ use App\Models\File;
 
 class NoteController extends Controller
 {
-    public function index(Note $note)
-    {
-        return view('notes.index')->with(['notes' => $note->get()]);
-        //blade内で使う変数'notes'と設定。'notes'の中身にgetを使い、インスタンス化した$noteを代入。
-    }
-    
      public function show(Note $note)
     {
         return view('notes.show')->with(['note' => $note]);
@@ -22,33 +16,34 @@ class NoteController extends Controller
     
     public function create(File $file)
     {
-        return view('notes.create')->with(['files' => $file->get()]);
+        return view('notes.create')->with(['file' => $file]);
 
     }
     
-    public function store(Request $request, Note $note)
+    public function store(Request $request, Note $notes)
     {
         $input = $request['note'];
-        $note->fill($input)->save();
-        return redirect('/notes' . $note->id);
+        $notes->fill($input)->save();
+        return redirect('/files/notes/' . $notes->id);
     }
     
-    public function edit(Note $note)
+    public function edit(File $file, Note $note)
     {
         return view('notes.edit')->with(['note' => $note]);
     }
 
     public function update(Request $request, Note $note)
     {
-        $input_note = $request['note'];
-        $note->fill($input_note)->save();
+        $input_notes = $request['note'];
+        $note->fill($input_notes)->save();
 
-        return redirect('/notes/' . $note->id);
+        return redirect('/files/notes/' . $note->id);
     }
     
     public function delete(Note $note)
     {
+        $file_id = $note->file_id;
         $note->delete();
-        return redirect('/');
+        return redirect('/files/' . $file_id);
     }
 }

@@ -17,8 +17,6 @@ class Event extends Model
     'percentage',
     'day',
     'user_id',
-    'todo_id',
-    'score_id',
 ];
 
 // userに対するリレーション
@@ -31,17 +29,16 @@ public function user()
 
 // todoに対するリレーション
 
-//「1対多」の関係なので単数系に
-public function todo()
+public function todos()
 {
-    return $this->belongsTo(Todo::class);
+    return $this->hasMany(Todo::class, 'event_id');
 }
 
 // scoreに対するリレーション
 
 //「1対多」の関係なので単数系に
-public function score()
+public function scores()
 {
-    return $this->belongsTo(Score::class);
+    return $this->hasMany(Score::class, 'event_id');
 }
 }

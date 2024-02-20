@@ -10,28 +10,22 @@
         
     </head>
     <body>
-        <h1>ノート一覧</h1>
-        <form action="/notes" method="POST">
+        <h1>ノート作成</h1>
+        <form action="/notes/store" method="POST">
             @csrf
+            <input type="hidden" name="note[file_id]" value="{{ $file->id }}">
             <div class="name">
-                <h2>ノート名</h2>
-                <input type="text" name="note[name]" placeholder="ノート題名"/>
+                <h2>ノート題名</h2>
+                <input type="text" name="note[name]" placeholder="ノートの題名を書いてください"/>
             </div>
-            <div class="file">
-                <h2>ファイル名</h2>
-                     <select name="note[file_id]">
-                        @foreach($files as $file)
-                            <option value="{{ $file->id }}">{{ $file->name }}</option>
-                        @endforeach
-                    </select>
             <div class="content">
                 <h2>内容</h2>
-                <textarea name="note[content]" placeholder="ノートを書く"></textarea>
+                <textarea name="note[content]" placeholder="ノートの内容を書いてください"></textarea>
             </div>
             <input type="submit" value="store"/>
         </form>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
+            <a href="/files">戻る</a>
         </div>
     </body>
 </html>

@@ -27,7 +27,7 @@
         <a href="/lessons/{{ $file->lesson->id }}">{{ $file->lesson->name }}</a>
         </div>
         <div class="footer">
-            <a href="/dashboard">戻る</a>
+            <a href="/files">戻る</a>
         </div>
     </body>
         <script>

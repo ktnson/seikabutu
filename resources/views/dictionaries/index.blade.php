@@ -6,8 +6,10 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
-        <h1>Dictionary List</h1>
+    <x-app-layout>
+    <x-slot name="header">
+        {{ __('辞書一覧')}}
+        </x-slot>
         <a href='/dictionaries/create'>辞書新規登録</a>
        
         <div class='dictionaries'>
@@ -29,8 +31,8 @@
             @endforeach
         </div>
          <div class="footer">
-            <a href="/dashboard">戻る</a>
         </div>
+        </x-app-layout>
         <script>
             function deleteDictionary(id) {
                 'use strict'
@@ -41,5 +43,4 @@
                 }
         </script>        
     </body>
-    
 </html>

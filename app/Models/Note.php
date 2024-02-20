@@ -22,6 +22,6 @@ class Note extends Model
 //「1対多」の関係なので単数系に
 public function file()
 {
-    return $this->belongsTo(File::class);
+    return $this->belongsTo(File::class, 'file_id');
 }
 }

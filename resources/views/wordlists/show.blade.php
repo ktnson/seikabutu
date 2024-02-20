@@ -11,6 +11,7 @@
         
     </head>
     <body>
+           <a href="/wordlists">単語帳一覧に戻る</a>
         <h1 class="wordlist_name">
             {{ $wordlist->wordlist_name }}
         </h1>
@@ -27,7 +28,6 @@
         
         <a href="/words/{{ $wordlist->word->id }}">{{ $wordlist->word->name }}</a>
         <div class="footer">
-           <a href="/wordlists">戻る</a>
         </div>
     </body>
 </html>
