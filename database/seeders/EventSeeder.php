@@ -17,10 +17,8 @@ class EventSeeder extends Seeder
     public function run()
     {
         DB::table('events')->insert([
-                'name' => '命名の心得',
-                'taskcount' => '命名はデータを基準に考える',
-                'percentage' => '命名はデータを基準に考える',
-                'day' => '命名はデータを基準に考える',
+                'name' => 'イベント名',
+                'day' => '期日、取り組む時間',
                 'user_id' => 1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
