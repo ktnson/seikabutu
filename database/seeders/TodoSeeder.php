@@ -17,8 +17,8 @@ class TodoSeeder extends Seeder
     public function run()
     {
         DB::table('todos')->insert([
-                'name' => '命名の心得',
-                'time' => '命名はデータを基準に考える',
+                'name' => 'やることの内容',
+                'time' => 'どれくらい時間をかけるか・いつまでにするか',
                 'event_id'=>1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),

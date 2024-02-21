@@ -17,7 +17,7 @@ class FileSeeder extends Seeder
     public function run()
     {
         DB::table('files')->insert([
-                'name' => '命名の心得',
+                'name' => 'ファイル名',
                 'lesson_id' => 1,
                 'user_id' => 1,
                 'created_at' => new DateTime(),

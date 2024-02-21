@@ -17,8 +17,8 @@ class DictionarySeeder extends Seeder
     public function run()
     {
         DB::table('dictionaries')->insert([
-                'dictionary_name' => '命名の心得',
-                'url' => '命名はデータを基準に考える',
+                'dictionary_name' => '辞書名',
+                'url' => '辞書のURL',
                 'language_id' => 1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),

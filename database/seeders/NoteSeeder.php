@@ -17,8 +17,8 @@ class NoteSeeder extends Seeder
     public function run()
     {
         DB::table('notes')->insert([
-                'name' => '命名の心得',
-                'content'=>'データに合わせる',
+                'name' => 'ノート題名',
+                'content'=>'ノート内容',
                 'file_id' => 1,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),

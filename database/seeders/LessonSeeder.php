@@ -17,7 +17,19 @@ class LessonSeeder extends Seeder
     public function run()
     {
         DB::table('lessons')->insert([
-                'name' => '命名の心得',
+                'name' => '専攻・必修',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+         ]);
+         
+         DB::table('lessons')->insert([
+                'name' => '兼修',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+         ]);
+         
+         DB::table('lessons')->insert([
+                'name' => 'その他',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
          ]);
