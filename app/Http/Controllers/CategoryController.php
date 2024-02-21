@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Score;
 use App\Models\Category;
+use App\Models\Event;
 
 class CategoryController extends Controller
 {
-    public function index(Score $score , Category $category)
+    public function index(Category $category , Event $event , Score $score)
     {
-        Score::where("event_id", $score->event_id)->get();
-        return view('categories.index')->with(['scores' => $score, category => $category]);
+        
+        return view('categories.index')->with(['scores' => $score->where("event_id", $event->id)->where("category_id", $category->id)->get()]);
     }
     
     

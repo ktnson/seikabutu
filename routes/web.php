@@ -94,7 +94,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/scores/{score}' , [ScoreController::class, 'update']);
     Route::delete('events/scores/{score}', [ScoreController::class,'delete']);
     
-    Route::get('/categories/{category}', [CategoryController::class,'index']);
+    Route::get('/categories/{category}/{event}', [CategoryController::class,'index']);
     
 });
 

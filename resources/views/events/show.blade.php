@@ -33,7 +33,7 @@
             @foreach ($event->scores as $score)
             <!-- scoreの表示ロジック-->
             <a href="/events/scores/{{ $score->id }}"><h2>{{ $score->name }}</h2></a>
-            <a href="/categories/{{ $score->category->id }}">{{ $score->category->name }}</a>
+            <a href="/categories/{{ $score->category->id }}/{{ $event->id }}">{{ $score->category->name }}</a>
             <p>{{ $score->data }}</p>
             <form action="/events/scores/{{ $score->id }}" id="form_{{ $score->id }}" method="POST">
                         @csrf
