@@ -6,7 +6,8 @@
         
          <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+         <!-- cssの読み込み -->
+        <link href="{{ asset('/css/dictionary.index.css') }}" rel="stylesheet">
         
     </head>
     <body>
