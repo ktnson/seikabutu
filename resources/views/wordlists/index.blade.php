@@ -5,6 +5,8 @@
         <title>単語帳</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- cssの読み込み -->
+        <link href="{{ asset('wordlist.index.css') }}" rel="stylesheet">
     </head>
     <x-app-layout>
     <x-slot name="header">
@@ -24,7 +26,7 @@
                          
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteWordlist({{ $wordlist->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteWordlist({{ $wordlist->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach

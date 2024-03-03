@@ -7,6 +7,8 @@
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+         <!-- cssの読み込み -->
+        <link href="{{ asset('event.show.css') }}" rel="stylesheet">
         
         
     </head>
@@ -24,7 +26,7 @@
             <form action="/events/todos/{{ $todo->id }}" id="form_{{ $todo->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteTodo({{ $todo->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteTodo({{ $todo->id }})">delete</button> 
                     </form>
             @endforeach
         </div>
@@ -38,7 +40,7 @@
             <form action="/events/scores/{{ $score->id }}" id="form_{{ $score->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteScore({{ $score->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteScore({{ $score->id }})">delete</button> 
                     </form>
             @endforeach
         </div>

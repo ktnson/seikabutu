@@ -23,7 +23,7 @@
                 <h2>意味・用法</h2>
                 <input type='text' name='wordlist[name]' value="{{ $wordlist->name }}">
             </div>
-            <input type="submit" value="store">
+            <input class="input" type="submit" value="store">
         </form>
     </div>
 </body>

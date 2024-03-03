@@ -22,7 +22,7 @@
                      <form action="/dicitonaries/{{ $dictionary->id }}" id="form_{{ $dictionary->id }}" method="dictionary">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteDictionary({{ $dictionary->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteDictionary({{ $dictionary->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach

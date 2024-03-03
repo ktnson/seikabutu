@@ -31,7 +31,7 @@
             </div>
             </div>
             </div>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
         <div class="footer">
         </div>

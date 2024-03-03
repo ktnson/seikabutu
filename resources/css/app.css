@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2{font-size: 30px;
+}
+    
+p{font-size: 15px;
+}
+    
+.btn{border: 1px solid black;
+}

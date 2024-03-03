@@ -24,7 +24,7 @@
                 <input type='text' name='score[data]' value="{{ $score->data }}">
             </div>
             <input type="hidden" name='score[event_id]' value='{{ $score->event_id}}'>
-            <input type="submit" value="store">
+            <input class="input" type="submit" value="store">
         </form>
     </div>
 </body>

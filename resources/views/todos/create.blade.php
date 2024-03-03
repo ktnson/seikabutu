@@ -22,7 +22,7 @@
                 <h2>期日</h2>
                 <textarea name="todo[time]" placeholder="期日はいつまでにしたいですか"></textarea>
             </div>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
         <div class="footer">
             <a href="/events">戻る</a>

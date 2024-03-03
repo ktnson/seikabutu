@@ -24,7 +24,7 @@
                 <input type='text' name='todo[time]' value="{{ $todo->time }}">
             </div>
             <input type="hidden" name='todo[event_id]' value='{{ $todo->event_id}}'>
-            <input type="submit" value="store">
+            <input class="input" type="submit" value="store">
         </form>
     </div>
 </body>

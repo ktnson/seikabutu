@@ -25,7 +25,7 @@
             <form action="/files/notes/{{ $note->id }}" id="form_{{ $note->id }}" method="POST"> 
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteNote({{ $note->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteNote({{ $note->id }})">delete</button> 
                     </form>
             @endforeach
         </div>

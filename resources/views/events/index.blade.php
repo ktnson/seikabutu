@@ -21,7 +21,7 @@
                      <form action="/events/{{ $event->id }}" id="form_{{ $event->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteEvent({{ $event->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteEvent({{ $event->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach
