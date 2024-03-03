@@ -19,7 +19,7 @@
                      <form action="/files/{{ $file->id }}" id="form_{{ $file->id }}" method="file">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteFile({{ $file->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteFile({{ $file->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach

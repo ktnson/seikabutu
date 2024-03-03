@@ -5,6 +5,8 @@
         <title>イベント</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+         <!-- cssの読み込み -->
+        <link href="{{ asset('/public/dictionary.index.css') }}" rel="stylesheet">
     </head>
     <body>
         <h1>成績一覧</h1>
@@ -20,7 +22,7 @@
                      <form action="/scores/{{ $score->id }}" id="form_{{ $score->id }}" method="score">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteScore({{ $score->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteScore({{ $score->id }})">delete</button> 
                     </form>
                 </div>
                 <a href="/events/{{ $score->event_id }}">戻る</a>

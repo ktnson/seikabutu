@@ -23,7 +23,7 @@
                 <h2>URL</h2>
                 <input type='text' name='dictionary[url]' value="{{ $dictionary->url }}">
             </div>
-            <input type="submit" value="store">
+            <input class="input" type="submit" value="store">
         </form>
     </div>
 </body>

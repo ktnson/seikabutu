@@ -24,7 +24,7 @@
                 <input type='text' name='note[content]' value="{{ $note->content }}">
             </div>
             <input type="hidden" name='note[file_id]' value='{{ $note->file_id}}'>
-            <input type="submit" value="store">
+            <input class="input" type="submit" value="store">
         </form>
     </div>
 </body>

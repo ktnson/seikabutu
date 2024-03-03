@@ -5,6 +5,8 @@
         <title>ファイル</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- cssの読み込み -->
+        <link href="{{ asset('file.index.css') }}" rel="stylesheet">
     </head>
     <x-app-layout>
     <x-slot name="header">
@@ -23,7 +25,7 @@
                      <form action="/files/{{ $file->id }}" id="form_{{ $file->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteFile({{ $file->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteFile({{ $file->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach

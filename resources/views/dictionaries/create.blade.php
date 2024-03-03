@@ -7,7 +7,6 @@
          <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
          <!-- cssの読み込み -->
-        <link href="{{ asset('/css/dictionary.index.css') }}" rel="stylesheet">
         
     </head>
     <body>
@@ -31,7 +30,7 @@
                         @endforeach
                     </select>
             </div>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
         <div class="footer">
         </div>

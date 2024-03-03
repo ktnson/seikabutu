@@ -17,7 +17,7 @@
                 <h2>イベント名</h2>
                 <input type="name" name="event[name]" placeholder="イベント名"/>
             </div>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
         <div class="footer">
             <a href="/events">戻る</a>

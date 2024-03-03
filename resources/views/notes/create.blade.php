@@ -6,7 +6,8 @@
         
          <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+         <!-- cssの読み込み -->
+        <link href="{{ asset('note.create.css') }}" rel="stylesheet">
         
     </head>
     <body>
@@ -22,7 +23,7 @@
                 <h2>内容</h2>
                 <textarea name="note[content]" placeholder="ノートの内容を書いてください"></textarea>
             </div>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
         <div class="footer">
             <a href="/files">戻る</a>

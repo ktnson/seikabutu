@@ -23,7 +23,7 @@
                          
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deleteWordlist({{ $wordlist->id }})">delete</button> 
+                        <button class="btn" type="button" onclick="deleteWordlist({{ $wordlist->id }})">delete</button> 
                     </form>
                 </div>
             @endforeach

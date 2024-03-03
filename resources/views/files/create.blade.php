@@ -16,7 +16,7 @@
             @csrf
             <div class="name">
                 <h2>ファイル名</h2>
-                <input type="text" name="file[name]" placeholder="ファイル名"/>
+                <input class="input" type="text" name="file[name]" placeholder="ファイル名"/>
             </div>
             <div class="lesson">
                 <h2>授業カテゴリー</h2>
@@ -25,7 +25,7 @@
                             <option value="{{ $lesson->id }}">{{ $lesson->name }}</option>
                         @endforeach
                     </select>
-            <input type="submit" value="store"/>
+            <input class="input" type="submit" value="store"/>
         </form>
             <div class="footer">
         </div>
